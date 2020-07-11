@@ -6,9 +6,7 @@ namespace CricketSystemCSharp
     {
         static void Main(string[] args)
         {
-            var commentryObject = new Commentry();
-            var scorecard = new Scorecard();
-            var scorecardService = new ScorecardSevice();
+            ScorecardController controller = new ScorecardController();
         label:
 
             Console.Clear();
@@ -31,27 +29,22 @@ namespace CricketSystemCSharp
                 switch (input)
                 {
                     case 1:
-                        scorecard.Commentry = commentryObject.CommentryLoad(6);
-                        Scorecard.Run += 6;
-                        Scorecard.Ball++;
-                        scorecard.TotalOver = scorecardService.CheckOverStatus();
-                        scorecardService.DisplayScorecard(scorecard);
+                        controller.CalculateScorecard(6);
                         break;
                     case 2:
-                        
+                        controller.CalculateScorecard(4);
                         break;
                     case 3:
-                        
+                        controller.CalculateScorecard(3);
                         break;
                     case 4:
-                        
-                        
+                        controller.CalculateScorecard(2);
                         break;
                     case 5:
-                        
+                        controller.CalculateScorecard(1);
                         break;
                     case 6:
-                        
+                        controller.CalculateScorecard(0);
                         break;
                     case 7:
 
