@@ -25,5 +25,15 @@ namespace CricketSystemCSharp
             _scorecard.TotalOver = _scorecardSevice.CheckOverStatus();
             _scorecardSevice.DisplayScorecard(_scorecard);
         }
+
+        public void CalculateScorecard(int run, WicketEnum wicket,ExtrasEnum extras)
+        {
+            _scorecard.Commentry = _commentry.CommentryLoad(wicket,extras);
+            Scorecard.Run += run;
+            _scorecardSevice.CheckExtrasGiven(extras);
+            _scorecardSevice.WicketGoneStatus(wicket);
+            _scorecard.TotalOver = _scorecardSevice.CheckOverStatus();
+            _scorecardSevice.DisplayScorecard(_scorecard);
+        }
     }
 }

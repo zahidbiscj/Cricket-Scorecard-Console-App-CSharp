@@ -21,5 +21,26 @@ namespace CricketSystemCSharp
             }
             return $"{Scorecard.Over}.{Scorecard.Ball}";
         }
+
+        public void CheckExtrasGiven(ExtrasEnum extras)
+        {
+            if(extras != ExtrasEnum.NoExtras)
+            {
+                Scorecard.Run++;
+            }
+            else
+            {
+                Scorecard.Ball++;
+            }
+        }
+
+        public void WicketGoneStatus(WicketEnum wicket)
+        {
+             
+            if(!(wicket ==  WicketEnum.NotOut))
+            {
+                Scorecard.Wicket++;
+            }
+        }
     }
 }

@@ -47,19 +47,19 @@ namespace CricketSystemCSharp
                         controller.CalculateScorecard(0);
                         break;
                     case 7:
-
+                        controller.CalculateScorecard(0, WicketEnum.CatchOut,ExtrasEnum.NoExtras);
                         break;
                     case 8:
-
+                        controller.CalculateScorecard(0, WicketEnum.RunOut,ExtrasEnum.NoExtras);
                         break;
                     case 9:
-
+                        controller.CalculateScorecard(0, WicketEnum.BoldOut,ExtrasEnum.NoExtras);
                         break;
                     case 10:
-
+                        controller.CalculateScorecard(0, WicketEnum.LBW,ExtrasEnum.NoExtras);
                         break;
                     case 11:
-
+                        controller.CalculateScorecard(0, WicketEnum.NotOut, ExtrasEnum.Wide);
                         break;
                     case 12:
 
