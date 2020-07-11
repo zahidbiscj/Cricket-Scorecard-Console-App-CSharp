@@ -25,6 +25,10 @@ namespace CricketSystemCSharp
                 var input = int.Parse(Console.ReadLine());
                 Console.WriteLine("\n");
                 
+                if(Scorecard.Wicket == 10)
+                {
+                    throw new Exception($"All Wicket Gone !!! \n {Scorecard.Run}/{Scorecard.Wicket} {Scorecard.Over}.{Scorecard.Ball} Overs");
+                }
 
                 switch (input)
                 {
@@ -50,7 +54,9 @@ namespace CricketSystemCSharp
                         controller.CalculateScorecard(0, WicketEnum.CatchOut,ExtrasEnum.NoExtras);
                         break;
                     case 8:
-                        controller.CalculateScorecard(0, WicketEnum.RunOut,ExtrasEnum.NoExtras);
+                        Console.Write("How many run Added - ");
+                        int run = int.Parse(Console.ReadLine());
+                        controller.CalculateScorecard(run, WicketEnum.RunOut,ExtrasEnum.NoExtras);
                         break;
                     case 9:
                         controller.CalculateScorecard(0, WicketEnum.BoldOut,ExtrasEnum.NoExtras);
@@ -62,10 +68,10 @@ namespace CricketSystemCSharp
                         controller.CalculateScorecard(0, WicketEnum.NotOut, ExtrasEnum.Wide);
                         break;
                     case 12:
-
+                        controller.CalculateScorecard(0, WicketEnum.NotOut, ExtrasEnum.NoBall);
                         break;
                     case 13:
-
+                        controller.CalculateScorecard(0, WicketEnum.Stumping, ExtrasEnum.NoExtras);
                         break;
 
                     default:

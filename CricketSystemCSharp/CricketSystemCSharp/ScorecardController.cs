@@ -30,8 +30,9 @@ namespace CricketSystemCSharp
         {
             _scorecard.Commentry = _commentry.CommentryLoad(wicket,extras);
             Scorecard.Run += run;
-            _scorecardSevice.CheckExtrasGiven(extras);
             _scorecardSevice.WicketGoneStatus(wicket);
+            _scorecardSevice.PreviousBallExtrasGiven(extras);
+            _scorecardSevice.CheckExtrasGiven(extras);
             _scorecard.TotalOver = _scorecardSevice.CheckOverStatus();
             _scorecardSevice.DisplayScorecard(_scorecard);
         }

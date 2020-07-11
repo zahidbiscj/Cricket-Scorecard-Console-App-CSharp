@@ -36,10 +36,24 @@ namespace CricketSystemCSharp
 
         public void WicketGoneStatus(WicketEnum wicket)
         {
-             
-            if(!(wicket ==  WicketEnum.NotOut))
+            // Runout hole out othoba jodi Noball Na hoy ebong kono wicket zay taile out
+            if((wicket == WicketEnum.RunOut) || (Scorecard.IsNoBall == false) && !(wicket == WicketEnum.NotOut))
             {
                 Scorecard.Wicket++;
+            }
+        }
+
+        public void PreviousBallExtrasGiven(ExtrasEnum extras)
+        {
+            // (Jodi noball hoy ) || (Noball Jodi thake + Wide hoy)
+            if(extras == ExtrasEnum.NoBall || (Scorecard.IsNoBall == true  && extras == ExtrasEnum.Wide))
+            {
+                Scorecard.IsNoBall = true;
+            }
+            // Jodi ager ball noball na hoy ebong ei ball wide ba noball na hoy taile noball false 
+            if(!(Scorecard.IsNoBall == true) && (extras == ExtrasEnum.Wide) ||(extras == ExtrasEnum.NoBall))
+            {
+                Scorecard.IsNoBall = false;
             }
         }
     }

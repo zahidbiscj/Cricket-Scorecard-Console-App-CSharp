@@ -12,5 +12,6 @@ namespace CricketSystemCSharp
         public static int Over { get; set; }
         public static int Ball { get; set; }
         public string TotalOver { get; set; }
+        public static bool IsNoBall { get; set; } 
     }
 }
