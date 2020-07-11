@@ -7,8 +7,8 @@ namespace CricketSystemCSharp
         static void Main(string[] args)
         {
             var commentryObject = new Commentry();
-            string commentry;int run = 0; int wicket = 0; int over = 0; int ball = 0; string totalOver;
-
+            var scorecard = new Scorecard();
+            var scorecardService = new ScorecardSevice();
         label:
 
             Console.Clear();
@@ -31,82 +31,27 @@ namespace CricketSystemCSharp
                 switch (input)
                 {
                     case 1:
-                        commentry = commentryObject.CommentryLoad(6);
-                        run += 6;
-                        ball++;
-                        if(ball==6)
-                        {
-                            over++;
-                            ball = 0;
-                        }
-                        totalOver = $"{over}.{ball}";
-                        Console.WriteLine($"Commentry : {commentry} \nRun = {run}\nWicket = {wicket}");
-                        Console.WriteLine($"Total Score : {run}/{wicket} {totalOver} Overs");
+                        scorecard.Commentry = commentryObject.CommentryLoad(6);
+                        Scorecard.Run += 6;
+                        Scorecard.Ball++;
+                        scorecard.TotalOver = scorecardService.CheckOverStatus();
+                        scorecardService.DisplayScorecard(scorecard);
                         break;
                     case 2:
-                        commentry = commentryObject.CommentryLoad(4);
-                        run += 4;
-                        ball++;
-                        if (ball == 6)
-                        {
-                            over++;
-                            ball = 0;
-                        }
-                        totalOver = $"{over}.{ball}";
-                        Console.WriteLine($"Commentry : {commentry} \nRun = {run}\nWicket = {wicket}");
-                        Console.WriteLine($"Total Score : {run}/{wicket} {totalOver} Overs");
+                        
                         break;
                     case 3:
-                        commentry = commentryObject.CommentryLoad(3);
-                        run += 3;
-                        ball++;
-                        if (ball == 6)
-                        {
-                            over++;
-                            ball = 0;
-                        }
-                        totalOver = $"{over}.{ball}";
-                        Console.WriteLine($"Commentry : {commentry} \nRun = {run}\nWicket = {wicket}");
-                        Console.WriteLine($"Total Score : {run}/{wicket} {totalOver} Overs");
+                        
                         break;
                     case 4:
-                        commentry = commentryObject.CommentryLoad(2);
-                        run += 2;
-                        ball++;
-                        if (ball == 6)
-                        {
-                            over++;
-                            ball = 0;
-                        }
-                        totalOver = $"{over}.{ball}";
-                        Console.WriteLine($"Commentry : {commentry} \nRun = {run}\nWicket = {wicket}");
-                        Console.WriteLine($"Total Score : {run}/{wicket} {totalOver} Overs");
+                        
+                        
                         break;
                     case 5:
-                        commentry = commentryObject.CommentryLoad(1);
-                        run += 1;
-                        ball++;
-                        if (ball == 6)
-                        {
-                            over++;
-                            ball = 0;
-                        }
-                        totalOver = $"{over}.{ball}";
-                        Console.WriteLine($"Commentry : {commentry} \nRun = {run}\nWicket = {wicket}");
-                        Console.WriteLine($"Total Score : {run}/{wicket} {totalOver} Overs");
+                        
                         break;
                     case 6:
-                        commentry = commentryObject.CommentryLoad(0);
-                        run += 0;
-                        ball++;
-                        if (ball == 6)
-                        {
-                            over++;
-                            ball = 0;
-                        }
-                        totalOver = $"{over}.{ball}";
-                        Console.WriteLine($"Commentry : {commentry} \nRun = {run}\nWicket = {wicket}");
-                        Console.WriteLine($"Total Score : {run}/{wicket} {totalOver} Overs");
+                        
                         break;
                     case 7:
 
